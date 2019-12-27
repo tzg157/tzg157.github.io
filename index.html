@@ -64,6 +64,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-docker-modify-date" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/27/docker-modify-date/" class="article-date">
+  <time datetime="2019-12-27T05:19:40.000Z" itemprop="datePublished">2019-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/27/docker-modify-date/">docker修改容器时间</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>docker image安装完成,并连接到容器之后,执行以下操作:</p>
+<p><strong>1.复制宿主机上的zoneinfo目录到容器下的/usr/share/ 目录</strong><br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp /usr/share/zoneinfo &lt;container_id|container_name&gt;:/usr/share/</span><br></pre></td></tr></table></figure><br><strong>2.执行</strong><br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it &lt;container_id|container_name&gt; /bin/bash</span><br></pre></td></tr></table></figure><br><strong>进入容器后,执行以下操作:</strong><br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">echo <span class="string">"Asia/shanghai"</span> &gt; /etc/timezone</span><br></pre></td></tr></table></figure><br><strong>查看修改后的时间</strong><br>    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/27/docker-modify-date/" data-id="ck4npk8xc0000ldf0dl0s1x56" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/21/first/" class="article-date">
@@ -159,9 +199,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/docker/" style="font-size: 10px;">docker</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -178,6 +232,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/12/27/docker-modify-date/">docker修改容器时间</a>
+          </li>
         
           <li>
             <a href="/2019/12/21/first/">first</a>
